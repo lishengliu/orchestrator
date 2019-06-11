@@ -87,6 +87,7 @@ var deprecatedConfigurationVariables = []string{
 // strictly expected from user.
 type Configuration struct {
 	Debug                                      bool   // set debug mode (similar to --debug option)
+	DisableMySQLMajorVersionCheck              bool   // disable MySQL major version check during change replication(for mysql upgrade version only )
 	EnableSyslog                               bool   // Should logs be directed (in addition) to syslog daemon?
 	ListenAddress                              string // Where orchestrator HTTP should listen for TCP
 	ListenSocket                               string // Where orchestrator HTTP should listen for unix socket (default: empty; when given, TCP is disabled)
@@ -278,7 +279,8 @@ var readFileNames []string
 
 func newConfiguration() *Configuration {
 	return &Configuration{
-		Debug:                                      false,
+		Debug: false,
+		DisableMySQLMajorVersionCheck:              false,
 		EnableSyslog:                               false,
 		ListenAddress:                              ":3000",
 		ListenSocket:                               "",

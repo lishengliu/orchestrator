@@ -3,6 +3,7 @@
   "#": "this is a comment. See further comment hints below.",
   "#": "-----",
   "Debug": true,
+  "DisableMySQLMajorVersionCheck": false,
   "ListenAddress": ":3000",
   "MySQLTopologyUser": "orc_client_user",
   "MySQLTopologyPassword": "orc_client_password",
